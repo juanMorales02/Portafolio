@@ -1,0 +1,318 @@
+   * { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --fondo: #f7f5f0;
+      --superficie: #ffffff;
+      --texto: #1a1a1a;
+      --apagado: #6b6b6b;
+      --acento: #e8b84b;
+      --borde: #e8e4dc;
+      --radio: 16px;
+    }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    .seccion-inicio {
+      padding: 5rem 6%;
+      background: var(--fondo);
+      min-height: 85vh;
+      overflow: hidden;
+    }
+    .columna-foto {
+      width: 38%;
+      float: right;
+      text-align: center;
+    }
+    .marco-foto {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 200px 200px 120px 120px;
+      overflow: hidden;
+      border: 4px solid var(--borde);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      margin: 0 auto;
+    }
+    .marco-foto img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .columna-texto {
+      width: 55%;
+      float: left;
+      padding-right: 2rem;
+      padding-top: 2rem;
+    }
+    .etiqueta-disponible {
+      background: var(--acento);
+      color: var(--texto);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1.2rem;
+      float: left;
+      clear: left;
+    }
+    .titulo-principal {
+      font-family: "Playfair Display", serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      float: left;
+      clear: left;
+      width: 100%;
+    }
+    .titulo-principal em {
+      font-style: italic;
+      color: var(--apagado);
+    }
+    .descripcion-inicio {
+      font-size: 1rem;
+      color: var(--apagado);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      float: left;
+      clear: left;
+      width: 100%;
+    }
+    .grupo-botones {
+      float: left;
+      clear: left;
+      width: 100%;
+      overflow: hidden;
+    }
+    .btn-primario {
+      background: var(--texto);
+      color: #fff;
+      float: left;
+      margin-right: 1rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-secundario {
+      background: transparent;
+      color: var(--texto);
+      border: 2px solid var(--borde);
+      float: left;
+      padding: 0.75rem 1.8rem;
+      border-radius: 99px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .etiqueta-seccion {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 0.5rem;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+    .titulo-seccion {
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+
+    .seccion-proyectos {
+      padding: 5rem 6%;
+      background: var(--fondo);
+      overflow: hidden;
+    }
+    .rejilla-proyectos {
+      overflow: hidden;
+      width: 100%;
+      float: left;
+    }
+    .tarjeta-proyecto {
+      width: 30%;
+      float: left;
+      margin-right: 4%;
+      margin-bottom: 2rem;
+      background: var(--superficie);
+      border: 1px solid var(--borde);
+      border-top: 3px solid var(--acento);
+      border-radius: var(--radio);
+      padding: 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+    }
+    .tarjeta-proyecto:nth-child(3n) { margin-right: 0; }
+    .tarjeta-proyecto:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+    .icono-proyecto {
+      font-size: 1.8rem;
+      background: var(--fondo);
+      border-radius: 12px;
+      padding: 0.5rem 0.7rem;
+      margin-bottom: 1rem;
+      float: left;
+      clear: both;
+    }
+    .nombre-proyecto {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+    .descripcion-proyecto {
+      color: var(--apagado);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+    .grupo-etiquetas {
+      overflow: hidden;
+      float: left;
+      clear: both;
+    }
+    .etiqueta-tech {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: var(--fondo);
+      color: var(--apagado);
+      padding: 0.2rem 0.65rem;
+      border-radius: 99px;
+      border: 1px solid var(--borde);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      float: left;
+      margin-right: 0.4rem;
+    }
+
+    .seccion-sobre-mi {
+      padding: 5rem 6%;
+      background: var(--superficie);
+      overflow: hidden;
+    }
+    .parrafo-sobre-mi {
+      color: var(--apagado);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+ 
+    .seccion-curriculum {
+      padding: 5rem 6%;
+      background: var(--fondo);
+      overflow: hidden;
+    }
+    .rejilla-cv {
+      overflow: hidden;
+      width: 100%;
+      float: left;
+    }
+    .tarjeta-cv {
+      width: 47%;
+      float: left;
+      margin-right: 5%;
+      background: var(--superficie);
+      border: 1px solid var(--borde);
+      border-radius: var(--radio);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .tarjeta-cv:nth-child(2n) { margin-right: 0; }
+    .encabezado-cv {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--borde);
+      margin-bottom: 1.2rem;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+    .elemento-cv {
+      float: left;
+      clear: both;
+      width: 100%;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .titulo-cv {
+      font-weight: 600;
+      font-size: 0.95rem;
+      float: left;
+    }
+    .fecha-cv {
+      font-size: 0.72rem;
+      color: var(--acento);
+      font-weight: 700;
+      background: rgba(232,184,75,0.15);
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+      float: right;
+    }
+    .subtitulo-cv {
+      font-size: 0.85rem;
+      color: var(--apagado);
+      margin-top: 0.3rem;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+    .lista-habilidades {
+      overflow: hidden;
+      float: left;
+      clear: both;
+      width: 100%;
+    }
+    .habilidad {
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: var(--fondo);
+      color: var(--texto);
+      padding: 0.4rem 1rem;
+      border-radius: 99px;
+      border: 1px solid var(--borde);
+      float: left;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .centro-boton {
+      text-align: center;
+      float: left;
+      clear: both;
+      width: 100%;
+      margin-top: 2rem;
+    }
