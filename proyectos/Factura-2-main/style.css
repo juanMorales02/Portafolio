@@ -1,47 +1,64 @@
-*{
+* {
     margin: 0;
+    box-sizing: border-box;
 }
-body{
-    height: 100vh;
+
+body {
+    min-height: 100vh;
     background-color: rgb(212, 212, 212);
     display: flex;
     justify-content: center;
     align-items: center;
-     font-family: 'Poppins', sans-serif;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
 }
-.box{
-    width: 35%;
-    min-height: 90vh;         
+
+.box {
+    width: 500px;
     background-color: rgb(255, 255, 255);
-
-    display: grid;
-    grid-template-rows: 16.66% 16.66% 6% 33.32% 13.33% 13.33%;
 }
 
-/*PARTE 1*/
-.parte1{
+/* ===========================
+   PARTE 1 — Header oscuro
+=========================== */
+.parte1 {
     background-color: rgb(36, 41, 49);
     display: grid;
     grid-template-columns: 1fr 1fr;
-     border-bottom: 10px solid rgb(204, 68, 91); 
+    border-bottom: 7px solid rgb(204, 68, 91);
+    padding: 22px 28px;
 }
-.icon1,.icon2{
+
+/* Logo izquierda */
+.icon1 {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
-.icon1 img,.icon2 img{
+
+.icon1 img {
     width: 70%;
 }
 
+/* "INVOICE" derecha */
+.icon2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-/*PARTE 2*/
+.icon2 img {
+    width: 75%;
+}
+
+/* ===========================
+   PARTE 2 — Invoice to / Info
+=========================== */
 .parte2{
     background-color: rgb(36, 41, 49);
     color: white;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
-    padding: 25px;
+    padding: 15px;
 }
 
 /* Lado izquierdo */
@@ -53,9 +70,9 @@ body{
 }
 
 .text1 h1{
-    font-size: 1em;
+    font-size: 0.7em;
     font-weight: 600;
-    margin-bottom: 5px;
+   
 }
 
 .text1 h3{
@@ -69,7 +86,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.4em;
+    margin-left: 20px;
+    font-size: 0.35em;
     font-weight: 400;
     
 }
@@ -79,63 +97,193 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 0.45em;
+    font-weight: 500;
+    text-align: left;
+}
+/* ===========================
+   PARTE 3 — Encabezados tabla
+=========================== */
+
+/* Columnas: SL | Description | Price | Qty | Total */
+/* Deben coincidir EXACTAMENTE con parte4 */
+.parte3 {
+    background-color: rgb(228, 228, 228);
+    display: grid;
+    grid-template-columns: 40px 1fr 70px 50px 70px;
+    align-items: center;
+    padding: 10px 40px;
+    font-size: 0.72em;
+    font-weight: 600;
+}
+
+#desc  { text-align: left; }
+#desc1 { text-align: left; }
+#desc2 { text-align: center; }
+#desc3 { text-align: center; }
+#desc4 { margin-left: 30px; }
+
+/* ===========================
+   PARTE 4 — Filas de items
+=========================== */
+.parte4 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    
+}
+
+.fact {
+    display: grid;
+    grid-template-columns: 40px 1fr 70px 50px 70px;
+    align-items: center;
+    padding: 18px 10px;
+    font-size: 0.72em;
+    border-bottom: 1px solid rgb(172, 171, 171);
+     margin: 0 -10px;
+}
+
+/* Fila vacía al final: borde inferior + algo de espacio */
+.fact.vacia {
+    padding:40px 0;
+    border-bottom: none;
+}
+
+.parte4 .fact div { font-weight: 400; }
+
+.parte4 .fact .desc  { text-align: left; }
+
+.parte4 .fact .desc1 {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Price, Qty, Total en filas */
+.parte4 .fact div:nth-child(3) { text-align: center; }
+.parte4 .fact div:nth-child(4) { text-align: center; }
+.parte4 .fact div:nth-child(5) { text-align: right; }
+
+.parte4 #espacio{
+     padding: 25px 0px;
+}
+/* ===========================
+   PARTE 5 — Totales + Pago
+=========================== */
+.parte5 {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    padding: 22px 40px;
+    align-items: start;
+    gap: 10px;
+}
+
+/* Lado izquierdo */
+.parte5-left h2 {
     font-size: 0.6em;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.payment-info h3 {
+    font-size: 0.62em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.payment-info p {
+    font-size: 0.45em;
     font-weight: 500;
-    text-align: left;
+    line-height: 1.5;
 }
 
-/*Parte 3*/
+/* Lado derecho: totales */
+.parte5-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
-.parte3{
-    background-color: rgb(220, 220, 220);
+.total-row,.total-row2 {
+    display: flex;   
+    font-size: 0.62em;
+    font-weight: 700;
+}
+
+.total-row{
+     justify-content: space-between;
+}
+
+.total-row2 span:first-child {
+    width: 105px;
+}
+
+
+
+.total-divider {
+    border-top: 1.5px solid rgb(128, 126, 126);
+    margin: 3px -6px 4px -6px;
+}
+
+.total-final {
+    font-size: 0.82em;
+    font-weight: 600;
+}
+
+.total-row .span #precio{
+    justify-content: left;
+}
+/* ===========================
+   PARTE 6 — Terms + Firma
+=========================== */
+.parte6 {
     display: grid;
-    grid-template-columns: 0.5fr 1.8fr 1fr 1fr 1.3fr;
-    align-items: center;   
-    font-size: 0.8em;
-}
-.parte3 div{
-    text-align: center;
-    font-weight: 550;
-}
-#desc1{
-    text-align: left;
-    padding-left: 15px;
-}
-#desc{
-    text-align: right;
-}
-#desc2{
-    padding-left: 15px;
-}
-#desc3{
-    padding-left: 15px;
-}
-#desc4{
-    padding-right: 40px;
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 40px 28px 40px;
+    gap: 10px;
+    align-items: end;
+     border-bottom: 15px solid rgb(36, 41, 49);
 }
 
-/*parte 4*/
+/* Línea gris fina arriba del bloque izquierdo */
 
-.parte4 {  
-    display: grid;
-    grid-template-rows: repeat(5, 20%);   
+.firma-line-left {
+width: 48%;
+ border-top: 2px solid rgb(128, 126, 126);
+padding-top: 10px;
 }
 
-.fact {    
-    display: grid;
-    grid-template-columns: 0.2fr 2fr 1fr 1fr 1fr;
-    align-items: center;   
-    font-size: 0.8em;
-   
-    border-bottom: 1px solid rgb(200,200,200);
-    margin: 0 40px;
-}
-.parte4 .fact div{
-    text-align: center;
-    font-weight: 500;
+.parte6-left h3 {
+    font-size: 0.65em;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
-.parte4 .fact .desc1{
-    text-align: left;
-    padding-left: 15px;
+.parte6-left p {
+    font-size: 0.3em;
+    font-weight: 700;
+    line-height: 1.75;
+    color: rgb(60, 60, 60);
+}
+
+/* Firma: alineada a la derecha */
+.parte6-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    
+}
+
+.firma-line {
+    width: 50%;
+    border-top: 1px solid rgb(80, 80, 80);
+}
+
+.parte6-right p {
+    font-size: 0.55em;
+    font-weight: 700;
+    margin-right: 15px;
 }
