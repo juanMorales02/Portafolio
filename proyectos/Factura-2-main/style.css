@@ -18,9 +18,7 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-/* ===========================
-   PARTE 1 — Header oscuro
-=========================== */
+/* PARTE 1*/
 .parte1 {
     background-color: rgb(36, 41, 49);
     display: grid;
@@ -29,7 +27,7 @@ body {
     padding: 22px 28px;
 }
 
-/* Logo izquierda */
+
 .icon1 {
     display: flex;
     align-items: center;
@@ -39,7 +37,6 @@ body {
     width: 70%;
 }
 
-/* "INVOICE" derecha */
 .icon2 {
     display: flex;
     align-items: center;
@@ -50,9 +47,7 @@ body {
     width: 75%;
 }
 
-/* ===========================
-   PARTE 2 — Invoice to / Info
-=========================== */
+/*   PARTE 2  */
 .parte2{
     background-color: rgb(36, 41, 49);
     color: white;
@@ -61,7 +56,7 @@ body {
     padding: 15px;
 }
 
-/* Lado izquierdo */
+
 .text1{
     display: flex;
     flex-direction: column;
@@ -101,12 +96,7 @@ body {
     font-weight: 500;
     text-align: left;
 }
-/* ===========================
-   PARTE 3 — Encabezados tabla
-=========================== */
-
-/* Columnas: SL | Description | Price | Qty | Total */
-/* Deben coincidir EXACTAMENTE con parte4 */
+/*  PARTE 3  */
 .parte3 {
     background-color: rgb(228, 228, 228);
     display: grid;
@@ -123,9 +113,7 @@ body {
 #desc3 { text-align: center; }
 #desc4 { margin-left: 30px; }
 
-/* ===========================
-   PARTE 4 — Filas de items
-=========================== */
+/*PARTE 4 */
 .parte4 {
     display: flex;
     flex-direction: column;
@@ -143,7 +131,7 @@ body {
      margin: 0 -10px;
 }
 
-/* Fila vacía al final: borde inferior + algo de espacio */
+
 .fact.vacia {
     padding:40px 0;
     border-bottom: none;
@@ -161,7 +149,6 @@ body {
 }
 
 
-/* Price, Qty, Total en filas */
 .parte4 .fact div:nth-child(3) { text-align: center; }
 .parte4 .fact div:nth-child(4) { text-align: center; }
 .parte4 .fact div:nth-child(5) { text-align: right; }
@@ -169,9 +156,7 @@ body {
 .parte4 #espacio{
      padding: 25px 0px;
 }
-/* ===========================
-   PARTE 5 — Totales + Pago
-=========================== */
+/* PARTE 5 */
 .parte5 {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
@@ -180,7 +165,7 @@ body {
     gap: 10px;
 }
 
-/* Lado izquierdo */
+
 .parte5-left h2 {
     font-size: 0.6em;
     font-weight: 600;
@@ -199,7 +184,6 @@ body {
     line-height: 1.5;
 }
 
-/* Lado derecho: totales */
 .parte5-right {
     display: flex;
     flex-direction: column;
@@ -235,9 +219,7 @@ body {
 .total-row .span #precio{
     justify-content: left;
 }
-/* ===========================
-   PARTE 6 — Terms + Firma
-=========================== */
+/*PARTE 6 */
 .parte6 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -247,7 +229,6 @@ body {
      border-bottom: 15px solid rgb(36, 41, 49);
 }
 
-/* Línea gris fina arriba del bloque izquierdo */
 
 .firma-line-left {
 width: 48%;
@@ -268,7 +249,6 @@ padding-top: 10px;
     color: rgb(60, 60, 60);
 }
 
-/* Firma: alineada a la derecha */
 .parte6-right {
     display: flex;
     flex-direction: column;
