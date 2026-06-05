@@ -9,6 +9,19 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        #videos .marco-video {
+            padding: 0;
+            background: #000;
+            line-height: 0;
+        }
+        #videos .marco-video video {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -119,7 +132,6 @@
 
         <div class="carrusel-programas">
 
-            <!-- Controles radio: CSS puro sin JS -->
             <input type="radio" name="programas" id="pg-1" class="radio-carrusel" checked>
             <input type="radio" name="programas" id="pg-2" class="radio-carrusel">
             <input type="radio" name="programas" id="pg-3" class="radio-carrusel">
@@ -555,21 +567,17 @@
             </p>
         </div>
 
-        <div class="carrusel-videos">
+        <div class="carrusel-videos" style="position:relative;">
 
-            <!-- Controles radio: CSS puro sin JS -->
             <input type="radio" name="videos" id="vd-1" class="radio-carrusel" checked>
             <input type="radio" name="videos" id="vd-2" class="radio-carrusel">
             <input type="radio" name="videos" id="vd-3" class="radio-carrusel">
             <input type="radio" name="videos" id="vd-4" class="radio-carrusel">
 
-            <!-- Video 1 -->
+            <!-- Video 1 — CON AUDIO -->
             <div class="diapositiva-video diapositiva-video-1">
                 <div class="marco-video">
-                    <iframe src="https://youtu.be/20JUqtfCPFY"
-                        title="Historia de impacto" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <video src="sources/video1.mp4" controls></video>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">01</span>
@@ -591,13 +599,10 @@
                 </div>
             </div>
 
-            <!-- Video 2 -->
+            <!-- Video 2 — MUTED -->
             <div class="diapositiva-video diapositiva-video-2">
                 <div class="marco-video">
-                    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4?mute=1"
-                        title="Un día en Sembrando Futuro" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <video src="sources/video1.mp4" controls muted></video>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">02</span>
@@ -619,13 +624,10 @@
                 </div>
             </div>
 
-            <!-- Video 3 -->
+            <!-- Video 3 — MUTED -->
             <div class="diapositiva-video diapositiva-video-3">
                 <div class="marco-video">
-                    <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?mute=1"
-                        title="Egresados exitosos" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <video src="sources/video1.mp4" controls muted ></video>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">03</span>
@@ -647,13 +649,10 @@
                 </div>
             </div>
 
-            <!-- Video 4 -->
+            <!-- Video 4 — MUTED -->
             <div class="diapositiva-video diapositiva-video-4">
                 <div class="marco-video">
-                    <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ?mute=1"
-                        title="Cómo donamos" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <video src="sources/video1.mp4" controls muted></video>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">04</span>
@@ -694,7 +693,7 @@
                 <div class="pie-redes">
                     <a href="#" class="boton-red" title="Instagram">📷</a>
                     <a href="#" class="boton-red" title="YouTube">▶️</a>
-                    <a href="#" class="boton-red" title="TikTok">🎵</a>                   
+                    <a href="#" class="boton-red" title="TikTok">🎵</a>
                 </div>
             </div>
             <div class="pie-columna">
