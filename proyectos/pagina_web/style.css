@@ -1,0 +1,549 @@
+:root {
+    --green: #6aaa3a;
+    --green-light: #e8f5e0;
+    --green-dark: #4d8a28;
+    --text-black: #000000;
+    --text-muted: #7e7e7e;
+    --card-bg: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* ══ HERO WRAPPER ══ */
+.hero-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    padding: 0 7%;
+}
+
+/* ══ CÍRCULOS ══
+       La regla es simple: top = -(width / 2)
+       Así el centro del círculo siempre está en el borde top
+       y overflow:hidden del wrapper lo corta limpio, sin línea visible.
+       En responsive se escalan pero se mantiene esa regla.
+    ══ */
+.bg-circle-top {
+    position: absolute;
+    width: 55vw;
+    height: 55vw;
+    max-width: 720px;
+    max-height: 720px;
+    background: var(--green);
+    border-radius: 50%;
+    /* top = -(width/2). Cuando width=55vw → top=-27.5vw */
+    top: -27.5vw;
+    right: 4vw;
+    /* Cuando max-width se activa (680px a ~1236px viewport):
+         top en px = -(680/2) = -340px                        */
+}
+
+.bg-circle-bottom {
+    position: absolute;
+    width: 55vw;
+    height: 55vw;
+    max-width: 570px;
+    max-height: 570px;
+    background: var(--green);
+    border-radius: 50%;
+    top: -6vw;
+    right: -13vw;
+}
+
+/* Cuando los max-width se activan, fijar top en px proporcional */
+@media (min-width: 1237px) {
+    .bg-circle-top {
+        top: -340px;
+    }
+
+    .bg-circle-bottom {
+        top: -74px;
+        right: -160px;
+    }
+}
+
+/* ══ NAVBAR ══ */
+header {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 0;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-left: auto;
+    margin-right: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* "Home" queda sobre el verde → debe ser blanco */
+nav a.active {
+    color: #fff;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-btn {
+    background: #fff;
+    color: #000;
+    border: 1.5px solid #ccc;
+    padding: 10px 26px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ══ HERO MAIN ══ */
+.hero-main {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 80px;
+    gap: 40px;
+}
+
+.hero-left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.badge-hungry {
+    border: 1.5px solid #000;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    background: #fff;
+}
+
+.hero-title {
+    font-size: clamp(30px, 4.2vw, 62px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: clamp(13px, 1.05vw, 15px);
+    line-height: 1.6;
+    max-width: 410px;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-order {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    padding: 16px 38px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-explore {
+    background: transparent;
+    color: #000;
+    border: 1.5px solid #000;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+/* ══ PLATE ══ */
+.hero-right {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-graphic {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1/1;
+}
+
+.center-ring {
+    position: absolute;
+    top: 18%;
+    left: 30%;
+    width: 60%;
+    height: 60%;
+    border: 14px solid #a8ce90;
+    background: var(--green-light);
+    border-radius: 50%;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plate-emoji {
+    font-size: clamp(40px, 5vw, 80px);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .15));
+}
+
+.sat {
+    position: absolute;
+    width: 17%;
+    height: 17%;
+    background: #fff;
+    border: 3px solid #a8ce90;
+    border-radius: 50%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(8px, 1.2vw, 16px);
+}
+
+.sat-1 {
+    top: 49%;
+    left: 8%;
+}
+
+.sat-2 {
+    top: 73%;
+    left: 25%;
+}
+
+.sat-3 {
+    top: 81%;
+    left: 54%;
+}
+
+.sat-4 {
+    top: 71%;
+    right: 3%;
+}
+
+.sat-5 {
+    top: 49%;
+    right: -11%;
+}
+
+/* ══ MENU ══ */
+.menu-section {
+    padding: 50px 7% 80px;
+    background: #fff;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.food-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.food-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .1);
+}
+
+.food-img-wrap {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #cce8b5;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.food-emoji {
+    font-size: 64px;
+}
+
+.food-name {
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.food-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.food-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.price-badge {
+    border: 1.5px solid #ccc;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+}
+
+.buy-btn {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.buy-btn:hover {
+    background: var(--green-dark);
+}
+
+/* ══ WHY CHOOSE US ══ */
+.why-section {
+    position: relative;
+    background: #f6f6f6;
+    padding: 80px 7%;
+    overflow: hidden;
+}
+
+.why-title {
+    font-size: clamp(26px, 3vw, 46px);
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.why-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 60px;
+    font-weight: 500;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.feature-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 220px;
+}
+
+.why-leaf-tl {
+    position: absolute;
+    left: -20px;
+    bottom: 20px;
+    font-size: 100px;
+    opacity: .6;
+    transform: scaleX(-1) rotate(-20deg);
+    pointer-events: none;
+}
+
+.why-leaf-br {
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    font-size: 100px;
+    opacity: .6;
+    transform: rotate(10deg);
+    pointer-events: none;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 900px) {
+    nav {
+        display: none;
+    }
+
+    /* Regla: top = -(width/2) siempre → sin costuras */
+    .bg-circle-top {
+        width: 80vw;
+        height: 80vw;
+        top: -40vw;
+        /* = -(80vw/2) */
+        right: 4vw;
+        max-width: none;
+        max-height: none;
+    }
+
+    .bg-circle-bottom {
+        width: 65vw;
+        height: 65vw;
+        top: -6vw;
+        right: -15vw;
+        max-width: none;
+        max-height: none;
+    }
+
+    .hero-main {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .hero-left {
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .canvas-graphic {
+        width: 65%;
+        margin-bottom: 20px;
+    }
+
+    .hero-desc {
+        margin: 0 auto 30px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .bg-circle-top {
+        width: 100vw;
+        height: 100vw;
+        top: -50vw;
+        /* = -(100vw/2) */
+        right: 4vw;
+    }
+
+    .bg-circle-bottom {
+        width: 80vw;
+        height: 80vw;
+        top: -5vw;
+        right: -20vw;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
