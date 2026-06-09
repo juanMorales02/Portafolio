@@ -21,6 +21,13 @@
             object-fit: contain;
             display: block;
         }
+        #videos .marco-video iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            height: auto;
+            display: block;
+            border: none;
+        }
     </style>
 </head>
 
@@ -574,7 +581,7 @@
             <input type="radio" name="videos" id="vd-3" class="radio-carrusel">
             <input type="radio" name="videos" id="vd-4" class="radio-carrusel">
 
-            <!-- Video 1 — CON AUDIO -->
+            <!-- Video 1 — LOCAL CON AUDIO -->
             <div class="diapositiva-video diapositiva-video-1">
                 <div class="marco-video">
                     <video src="sources/video1.mp4" controls></video>
@@ -599,10 +606,15 @@
                 </div>
             </div>
 
-            <!-- Video 2 — MUTED -->
+            <!-- Video 2 — YOUTUBE -->
             <div class="diapositiva-video diapositiva-video-2">
                 <div class="marco-video">
-                    <video src="sources/video1.mp4" controls muted></video>
+                    <iframe
+                        src="https://www.youtube.com/embed/laOHROw__S0?mute=1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">02</span>
@@ -624,10 +636,15 @@
                 </div>
             </div>
 
-            <!-- Video 3 — MUTED -->
+            <!-- Video 3 — YOUTUBE -->
             <div class="diapositiva-video diapositiva-video-3">
                 <div class="marco-video">
-                    <video src="sources/video1.mp4" controls muted ></video>
+                    <iframe
+                        src="https://www.youtube.com/embed/UCNic5WYONo?mute=1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">03</span>
@@ -649,10 +666,15 @@
                 </div>
             </div>
 
-            <!-- Video 4 — MUTED -->
+            <!-- Video 4 — LOCAL MUTED -->
             <div class="diapositiva-video diapositiva-video-4">
                 <div class="marco-video">
-                    <video src="sources/video1.mp4" controls muted></video>
+                    <iframe
+                        src="https://www.youtube.com/embed/RYOD_XnMkV4?mute=1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">04</span>
