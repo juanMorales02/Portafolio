@@ -84,7 +84,7 @@ nav {
     transform: translateX(-50%);
 }
 
-/* Menu, About Us, Contact: dentro del verde → negros */
+
 nav a {
     text-decoration: none;
     color: #000;
@@ -93,7 +93,6 @@ nav a {
     white-space: nowrap;
 }
 
-/* Home: fuera del verde, sobre blanco → verde oscuro */
 nav a:first-child {
     color: #055a10;
 }
@@ -536,7 +535,6 @@ nav a:first-child {
         right: -14vw;
     }
 
-    /* Entre 901px y 1439px el círculo empieza más a la izquierda */
     nav {
         left: 40%;
         transform: translateX(-59%);
