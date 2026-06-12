@@ -79,22 +79,22 @@ nav {
     display: flex;
     align-items: center;
     gap: clamp(18px, 2.5vw, 42px);
-    margin-left: auto;
-    margin-right: clamp(16px, 2vw, 40px);
+    position: absolute;
+    left: 38%;
+    transform: translateX(-50%);
 }
 
+/* Menu, About Us, Contact: dentro del verde → negros */
 nav a {
     text-decoration: none;
     color: #000;
-    font-weight: 600;
+    font-weight: 700;
     font-size: clamp(15px, 1vw, 18px);
     white-space: nowrap;
-    position: relative;
-    left:  -50%;
 }
 
-
-nav a.activo {
+/* Home: fuera del verde, sobre blanco → verde oscuro */
+nav a:first-child {
     color: #055a10;
 }
 
@@ -230,8 +230,8 @@ nav a.activo {
 
 .anillo-central {
     position: absolute;
-    top: 8%;
-    left: 18%;
+    top: 15%;
+    left: 15%;
     width: 64%;
     height: 64%;
     border: clamp(8px, 1.2vw, 18px) solid #a8ce90;
@@ -272,28 +272,28 @@ nav a.activo {
 }
 
 .satelite-1 {
-    top: 35%;
+    top: 45%;
     left: -4%;
 }
 
 .satelite-2 {
-    top: 65%;
-    left: 6%;
+    top: 70%;
+    left: 8%;
 }
 
 .satelite-3 {
-    top: 78%;
-    left: 46%;
+    top: 82%;
+    left: 41%;
 }
 
 .satelite-4 {
-    top: 65%;
-    right: 6%;
+    top: 70%;
+    right: 14%;
 }
 
 .satelite-5 {
-    top: 35%;
-    right: -4%;
+    top: 45%;
+    right: 2%;
 }
 
 
@@ -517,7 +517,32 @@ nav a.activo {
     z-index: -1;
 }
 
+/* ══════════════════════════════
+   RESPONSIVE — tablet (< 1439px)
+══════════════════════════════ */
+@media (max-width: 1439px)  {
+  
+     .circulo-fondo-superior {
+        width: 68vw;
+        height: 70vw;
+        top: -41vw;
+        right: 3vw;
+    }
 
+    .circulo-fondo-inferior {
+        width: 49vw;
+        height: 50vw;
+        top: -8vw;
+        right: -14vw;
+    }
+
+    /* Entre 901px y 1439px el círculo empieza más a la izquierda */
+    nav {
+        left: 40%;
+        transform: translateX(-59%);
+    }
+ 
+}
 /* ══════════════════════════════
    RESPONSIVE — tablet (< 900px)
 ══════════════════════════════ */
@@ -527,7 +552,7 @@ nav a.activo {
     }
 
     .circulo-fondo-superior {
-        width: 82vw;
+        width: 98vw;
         height: 82vw;
         top: -41vw;
         right: 3vw;
@@ -535,7 +560,7 @@ nav a.activo {
 
     .circulo-fondo-inferior {
         width: 66vw;
-        height: 66vw;
+        height: 60vw;
         top: -8vw;
         right: -14vw;
     }
@@ -577,6 +602,9 @@ nav a.activo {
     .cuadricula-caracteristicas {
         grid-template-columns: 1fr;
     }
+   .hoja-hero-superior-izquierda {
+        display: none;
+    }
     
 }
 
@@ -593,7 +621,7 @@ nav a.activo {
 
     .circulo-fondo-inferior {
         width: 82vw;
-        height: 82vw;
+        height: 70vw;
         top: -8vw;
         right: -18vw;
     }
@@ -605,6 +633,8 @@ nav a.activo {
     .grafico-canvas {
         width: clamp(190px, 76vw, 320px);
     }
+     
+    
 }
 
 /* ══════════════════════════════
@@ -630,42 +660,45 @@ nav a.activo {
 
 
 @media (min-width: 1440px) {
-    .circulo-fondo-superior {
-        width: clamp(920px, 63vw, 1220px);
-        height: clamp(920px, 63vw, 1220px);
-        top: calc(clamp(920px, 63vw, 1220px) / -2.65);
-        right: -46px;
+     .circulo-fondo-superior {
+        width: 70vw;
+        height: 62vw;
+        top: -35vw;
+        right: -2vw;
     }
 
     .circulo-fondo-inferior {
-        width: clamp(740px, 49vw, 940px);
-        height: clamp(740px, 49vw, 940px);
-        top: 28px;
-        right: -112px;
+        width: 46vw;
+        height: 44vw;
+        top: -6vw;
+        right: -12vw;
     }
-
+    
+/* 
     .anillo-central {
         position: absolute;
-        top: 27%;
-        left: 2%;
+        top: 18%;
+        left: 4%;
         width: 64%;
         height: 64%;
     }
 
-    .satelite-1 { top: 49%; left: -18%; }
-    .satelite-2 { top: 81%; left: -7%; }
-    .satelite-3 { top: 94%; left: 30%; }
-    .satelite-4 { top: 80%; right: 24%; }
-    .satelite-5 { top: 49%; right: 14%; }
+    .satelite-1 { top: 38%; left: -18%; }
+    .satelite-2 { top: 68%; left: -7%; }
+    .satelite-3 { top: 87%; left: 30%; }
+    .satelite-4 { top: 68%; right: 20%; }
+    .satelite-5 { top: 38%; right: 10%; } */
 
-    nav a {
-        left: -85%;
+    nav {
+        left: 37%;
+        transform: translateX(-50%);
     }
  
 }
 
 @media (min-width: 1807px) {
-    nav a {
-        left: -110%;
+    nav {
+        left: 36%;
+        transform: translateX(-49%);
     }
 }
