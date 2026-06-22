@@ -13,20 +13,13 @@
         #videos .marco-video {
             padding: 0;
             background: #000;
-            line-height: 0;
+            line-height: 0;    
         }
         #videos .marco-video video {
             width: 100%;
             height: auto;
             object-fit: contain;
             display: block;
-        }
-        #videos .marco-video iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            height: auto;
-            display: block;
-            border: none;
         }
     </style>
 </head>
@@ -54,6 +47,9 @@
 
     <!-- ══ HERO ══ -->
     <section id="inicio">
+          <video autoplay muted loop playsinline class="video-fondo">
+    <source src="sources/fondo.mp4" type="video/mp4">
+  </video>
         <div class="hero-interno">
             <div class="hero-texto">
                 <div class="hero-etiqueta">📍 Bucaramanga, Colombia · 5 años de impacto</div>
@@ -581,7 +577,7 @@
             <input type="radio" name="videos" id="vd-3" class="radio-carrusel">
             <input type="radio" name="videos" id="vd-4" class="radio-carrusel">
 
-            <!-- Video 1 — LOCAL CON AUDIO -->
+            <!-- Video 1 — CON AUDIO -->
             <div class="diapositiva-video diapositiva-video-1">
                 <div class="marco-video">
                     <video src="sources/video1.mp4" controls></video>
@@ -606,15 +602,10 @@
                 </div>
             </div>
 
-            <!-- Video 2 — YOUTUBE -->
+            <!-- Video 2 — MUTED -->
             <div class="diapositiva-video diapositiva-video-2">
                 <div class="marco-video">
-                    <iframe
-                        src="https://www.youtube.com/embed/laOHROw__S0?mute=1"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <video src="sources/video1.mp4" controls muted></video>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">02</span>
@@ -636,15 +627,10 @@
                 </div>
             </div>
 
-            <!-- Video 3 — YOUTUBE -->
+            <!-- Video 3 — MUTED -->
             <div class="diapositiva-video diapositiva-video-3">
                 <div class="marco-video">
-                    <iframe
-                        src="https://www.youtube.com/embed/UCNic5WYONo?mute=1"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <video src="sources/video1.mp4" controls muted ></video>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">03</span>
@@ -666,15 +652,10 @@
                 </div>
             </div>
 
-            <!-- Video 4 — LOCAL MUTED -->
+            <!-- Video 4 — MUTED -->
             <div class="diapositiva-video diapositiva-video-4">
                 <div class="marco-video">
-                    <iframe
-                        src="https://www.youtube.com/embed/RYOD_XnMkV4?mute=1"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                    <video src="sources/video1.mp4" controls muted></video>
                 </div>
                 <div class="pie-video">
                     <span class="numero-video">04</span>
@@ -701,6 +682,7 @@
 
     <!-- ══ FOOTER ══ -->
     <footer>
+        
         <div class="pie-cuadricula">
             <div class="pie-marca">
                 <a href="#inicio" class="logo" style="display:inline-flex; margin-bottom:0.5rem;">
